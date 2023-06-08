@@ -8,7 +8,7 @@ import { Header } from "../../components/Header";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { BsUpload } from "react-icons/bs";
 
-export function AddPrato() {
+export function EditarPrato() {
   return (
     <Container>
       <Header />
