@@ -2,6 +2,8 @@ import { Container, Form, Logo } from "./style";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import { ButtonText } from "../../components/ButtonText";
+import { Text } from "../../components/Text";
+
 
 import { Link } from "react-router-dom";
 
@@ -21,7 +23,8 @@ export function SignUp() {
         <Input label="Senha" placeholder="No mínimo 6 caracteres" />
 
         <Button title="Criar conta" />
-        <ButtonText title="Já tenho uma conta" />  
+        
+        <Text title="Já tenho uma conta"/>
 
       </Form>
     </Container>

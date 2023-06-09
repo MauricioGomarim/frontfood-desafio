@@ -1,15 +1,13 @@
 import { Routes, Route } from "react-router-dom";
 
 import { SignIn } from "../pages/SignIn";
-import { Signup } from "../pages/Signup";
-import { EditarPrato } from "../pages/EditarPrato";
-import { Details } from "../pages/Details";
+import { SignUp } from "../pages/Signup";
 
-export function AppRoutes() {
+export function AuthRotes() {
   return (
     <Routes>
       <Route path="/" element={<SignIn />} />
-      <Route path="/register" element={<Signup />} />
+      <Route path="/register" element={<SignUp />} />
     </Routes>
   );
 }

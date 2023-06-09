@@ -2,6 +2,7 @@ import { Container, Form, Logo } from "./style";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import { ButtonText } from "../../components/ButtonText";
+import { Text } from "../../components/Text";
 
 import { Link } from "react-router-dom";
 
@@ -20,7 +21,8 @@ export function SignIn() {
         <Input label="Senha" placeholder="No mínimo 6 caracteres"></Input>
 
         <Button title="Entrar" />
-        <ButtonText title="Criar conta" />  
+
+        <Text title="Criar conta" />
 
       </Form>
     </Container>
