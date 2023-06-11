@@ -38,6 +38,7 @@ export const Form = styled.form`
   display: flex;
   flex-wrap: wrap;
   gap: 5%;
+
   .r1-col1 {
     width: 20%;
   }
@@ -59,6 +60,10 @@ export const Form = styled.form`
 
   .r1-col2 {
     width: 50%;
+
+    input {
+      width: 100%;
+    }
   }
 
   .r2-col1 {

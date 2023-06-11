@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { useAuth } from "../../hook/auth";
 import { useState } from "react";
 import { Button } from "../Button"
@@ -26,8 +28,8 @@ export function Header() {
           <BsSearch />
           <input placeholder="Busque por pratos ou ingredientes"/>
         </div>
-        <div>
-   {      user.isAdmin ? <Button title="Novo pedido"/> : <a href="#">
+        <div className="newDish">
+   {      user.isAdmin ? <Link to="/addprato"><Button title="Novo pedido"/></Link> : <a href="#">
             <BsReceipt />
             Pedidos(0)
           </a>}

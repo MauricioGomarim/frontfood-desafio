@@ -17,6 +17,11 @@ export const Container = styled.header`
       width: 100%;
       max-width: 250px;
     }
+    .newDish {
+      a {
+        padding: 0 !important;
+      }
+    }
 
     > div:nth-child(1) {
       width: 23%;
