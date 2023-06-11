@@ -9,7 +9,7 @@ export function Routes() {
 
   return (
     <BrowserRouter>
-      <AuthRotes />
+      <AppRoutes />
     </BrowserRouter>
   );
 }

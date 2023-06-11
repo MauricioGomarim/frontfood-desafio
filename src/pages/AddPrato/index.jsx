@@ -32,15 +32,14 @@ export function AddPrato() {
               <input type="text" placeholder="Ex.: Salada Ceasar" />
             </SectionLabel>
 
-            <SectionLabel title="Imagem do prato" className="r1-col3">
+            <SectionLabel title="Categoria" className="r1-col3">
               <select name="select">
                 <option disabled selected>
-                  {" "}
                   Refeição
                 </option>
-                <option value="valor1">Valor 1</option>
-                <option value="valor2">Valor 2</option>
-                <option value="valor3">Valor 3</option>
+                <option value="valor1">Prato</option>
+                <option value="valor2">Bebida</option>
+                <option value="valor3">Sobremesa</option>
               </select>
             </SectionLabel>
 
