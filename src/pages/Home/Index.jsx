@@ -1,3 +1,6 @@
+import { useAuth } from "../../hook/auth";
+import { useState } from "react";
+
 import { Container, Section } from "./style";
 import { SectionSlide } from "../../components/SectionSlide";
 import { Header } from "../../components/Header";
@@ -7,6 +10,10 @@ import { Card } from "../../components/Card";
 import imgBanner from "../../assets/image-banner.png";
 
 export function Home() {
+
+  const { user } = useAuth();
+
+  console.log(user)
   return (
     <Container>
       <Header />

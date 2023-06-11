@@ -63,9 +63,11 @@ export const Container = styled.header`
         background-color: ${({ theme }) => theme.COLORS.RED};
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 10px;
         padding: 15px 40px;
         color: ${({ theme }) => theme.COLORS.WHITE};
+        width: 100%;
       }
 
       > svg {

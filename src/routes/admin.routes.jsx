@@ -5,7 +5,7 @@ import { AddPrato } from "../pages/AddPrato";
 import { EditarPrato } from "../pages/EditarPrato";
 import { Details } from "../pages/Details";
 
-export function AppRoutes() {
+export function AdminRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
