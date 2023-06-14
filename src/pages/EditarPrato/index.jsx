@@ -3,7 +3,7 @@ import { ButtonText } from "../../components/ButtonText";
 import { Button } from "../../components/Button";
 
 import { SectionLabel } from "../../components/SectionLabel";
-import { Ingrediente } from "../../components/Ingrediente";
+import { IngredientsTag } from "../../components/IngredientsTag";
 import { Header } from "../../components/Header";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { BsUpload } from "react-icons/bs";
