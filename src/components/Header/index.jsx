@@ -12,8 +12,6 @@ export function Header() {
 
   const { Logout, user } = useAuth();
 
-  console.log(user.isAdmin)
-
   function handleLogout(){
     Logout();
     return

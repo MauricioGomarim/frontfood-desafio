@@ -9,7 +9,7 @@ export const Container = styled.div`
     border: ${({ theme, isNew }) => isNew ? `1px dashed ${theme.COLORS.GRAY_300}` : "none"};
 
     color: ${({ theme }) => theme.COLORS.GRAY_300};
-    background-color: ${({ theme, isNew }) => isNew ? "transparent" : theme.COLORS.BLUE_300};
+    background-color: ${({ theme, isNew }) => isNew ? "transparent" : theme.COLORS.GRAY_300};
     
     svg {
         vertical-align: middle;
@@ -21,7 +21,7 @@ export const Container = styled.div`
     }
 
     .button-delete {
-        color: ${({ theme }) => theme.COLORS.RED};
+        color: ${({ theme }) => theme.COLORS.WHITE};
     }
 
     .button-add {
@@ -29,7 +29,7 @@ export const Container = styled.div`
     }
 
     > input {
-        max-width: 13rem;
+        max-width: 8rem;
         height: 2.8rem;
 
         border: none;

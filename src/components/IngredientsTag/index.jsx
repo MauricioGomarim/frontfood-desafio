@@ -4,13 +4,14 @@ import { FiPlus, FiX } from "react-icons/fi";
 
 export function IngredientsTag({ isNew, value, onClick, ...rest }) {
     return (
-        <Container isNew={isNew}>
+        <Container isNew={isNew} className="background-gray">
             <input 
                 type="text"
                 value={value}
                 readOnly={!isNew}
                 {...rest}
                 list="ingredientName"
+                
             />
 
             <datalist id="ingredientName">

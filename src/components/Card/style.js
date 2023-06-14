@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Container = styled.div`
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_ESCURO_2};
   text-align: center;
-  width: 30%;
   margin-top: 1rem;
   padding: 40px 0 50px 0;
 

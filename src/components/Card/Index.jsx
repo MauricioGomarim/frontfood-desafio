@@ -1,15 +1,18 @@
 import { Container } from "./style";
 import img1 from "../../assets/Mask group-1.png";
-
+import { api } from "../../services/api"
 import { MdRemove, MdOutlineAdd } from "react-icons/md";
-export function Card() {
+export function Card({ data, ...rest}) {
+
+
+  const imgURL = data.image ? `${api.defaults.baseURL}/files/${data.image}` : img1;
   return (
-    <Container>
-      <div className="Infos-card">
-        <img src={img1} alt="produto" />
-        <h2>Spaguetti Gambe</h2>
-        <p>Massa fresca com camarões e pesto. </p>
-        <h1>R$ 79,97</h1>
+    <Container {...rest} >
+      <div className="Infos-card" >
+        <img src={imgURL} alt="produto" />
+        <h2>{data.title}</h2>
+        <p>{data.description}</p>
+        <h1>R$ {data.price}</h1>
       </div>
 
       <div className="card-footer">

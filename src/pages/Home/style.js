@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const Container = styled.div`
   padding-bottom: 100px;
 
+  .swiper {
+    display: flex !important;
+    width: 100% !important;
+  }
   > main {
     width: 80%;
     max-width: 100%;
