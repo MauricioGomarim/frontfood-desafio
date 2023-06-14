@@ -4,12 +4,14 @@ import { api } from "../../services/api";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
-import { Navigation } from "swiper";
+import 'swiper/css/navigation'
+
+import { Navigation} from "swiper";
 
 import { Container, Section } from "./style";
 import { SectionSlide } from "../../components/SectionSlide";
 import { Header } from "../../components/Header";
-import { Card } from "../../components/Card";
+import { Card } from "../../components/Card/Index";
 
 // import img banner //
 import imgBanner from "../../assets/image-banner.png";
@@ -46,7 +48,7 @@ export function Home() {
             0 && (
             <Swiper
               grabCursor={true}
-              loop={true}
+              loop={false}
               loopFillGroupWithBlank={true}
               breakpoints={{
                 "@0.00": {
@@ -66,7 +68,7 @@ export function Home() {
                   spaceBetween: 30,
                 },
               }}
-              navigation={true}
+              navigation
               modules={[Navigation]}
               className="mySwiper"
             >
@@ -108,7 +110,8 @@ export function Home() {
                     spaceBetween: 30,
                   },
                 }}
-                navigation={true}
+                navigation
+                pagination
                 modules={[Navigation]}
                 className="mySwiper"
               >

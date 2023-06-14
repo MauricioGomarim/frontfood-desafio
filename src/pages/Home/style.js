@@ -7,6 +7,10 @@ export const Container = styled.div`
     display: flex !important;
     width: 100% !important;
   }
+
+  .swiper-button-prev:after,.swiper-button-next:after {
+    color: white;
+  }
   > main {
     width: 80%;
     max-width: 100%;
