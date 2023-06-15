@@ -57,6 +57,11 @@ export const Content = styled.div`
       font-weight: 700;
       font-size: 20px;
       color: ${({ theme }) => theme.COLORS.WHITE};
+      max-width: 200px;
+
+      > a {
+        width: 100%;
+      }
 
       .quantidade {
         display: flex;

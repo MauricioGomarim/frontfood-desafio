@@ -6,6 +6,7 @@ export const Container = styled.button`
     padding: 10px;
     color: ${({ theme }) => theme.COLORS.WHITE};
     border: none;
+    border-radius: 5px;
 
     font-family: "Poppins";
     font-style: normal;

@@ -4,7 +4,7 @@ import { FiPlus, FiX } from "react-icons/fi";
 
 export function IngredientsTag({ isNew, value, onClick, ...rest }) {
     return (
-        <Container isNew={isNew} className="background-gray">
+        <Container isNew={isNew} className="background-gray" {...rest}>
             <input 
                 type="text"
                 value={value}

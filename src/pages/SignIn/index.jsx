@@ -28,8 +28,10 @@ export function SignIn() {
         <Input label="Senha" type="password"placeholder="No mínimo 6 caracteres" onChange={e => setPassword(e.target.value)}/>
 
         <Button title="Entrar" type="button" onClick={handleSignIn} />
-
+        <Link to="/register">
         <Text title="Criar conta" />
+        </Link>
+       
       </Form>
     </Container>
   );

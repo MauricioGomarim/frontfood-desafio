@@ -6,7 +6,18 @@ export const Container = styled.div`
   margin-top: 1rem;
   padding: 40px 0 50px 0;
 
-  > .Infos-card {
+  .Container .icon svg {
+    color: ${({ theme }) => theme.COLORS.WHITE};
+    font-size: 32px;
+  }
+  .Container .icon {
+    width: fit-content;
+    position: absolute;
+    right: 10%;
+    top: 10%;
+  }
+
+  > .Container .Infos-card {
     h2 {
       font-family: "Poppins";
       font-style: normal;
@@ -39,7 +50,7 @@ export const Container = styled.div`
     }
   }
 
-  > .card-footer {
+  > .Container .card-footer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,8 +61,6 @@ export const Container = styled.div`
     font-size: 20px;
     color: ${({ theme }) => theme.COLORS.WHITE};
 
-
-
     .quantidade {
       display: flex;
       gap: 10px;
@@ -59,7 +68,7 @@ export const Container = styled.div`
       > svg {
         font-size: 30px;
         cursor: pointer;
-    }
+      }
     }
 
     .add {
