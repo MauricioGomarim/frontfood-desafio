@@ -179,7 +179,7 @@ export function EditarPrato() {
                 />
               </SectionLabel>
               <SectionLabel title="Preço" className="r2-col2">
-                <input type="number" placeholder="R$ 00,00" value={price} />
+                <input type="text" placeholder="R$ 00,00" value={price} />
               </SectionLabel>
               <SectionLabel title="Descrição" className="r2-col3">
                 <textarea

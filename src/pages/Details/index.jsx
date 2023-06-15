@@ -5,7 +5,7 @@ import { Header } from "../../components/Header";
 
 import { Container, Content, SectionTags } from "./style";
 import { MdKeyboardArrowLeft } from "react-icons/md";
-import imgProduct from "../../assets/Mask group-10.png";
+import imgProduct from "../../assets/Mask group-1.png";
 import { MdRemove, MdOutlineAdd } from "react-icons/md";
 
 import { api } from "../../services/api";
@@ -19,11 +19,15 @@ export function Details() {
   const [data, setData] = useState("");
   const user = useAuth();
 
+  const imgURL = data.image
+  ? `${api.defaults.baseURL}/files/${data.image}`
+  : imgProduct;
+
   useEffect(() => {
     async function buscarDadosPrato() {
       const response = await api.get(`/pratos/${params.id}`);
       setData(response.data);
-      console.log(data);
+      console.log(data.image);
     }
     buscarDadosPrato();
   }, []);
@@ -40,7 +44,7 @@ export function Details() {
             </a>
             <Content>
               <div className="col1">
-                <img src={imgProduct} alt="" />
+                <img src={imgURL} alt="" />
               </div>
               <div className="col2">
                 <h1>{data.title}</h1>
