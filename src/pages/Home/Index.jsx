@@ -1,5 +1,7 @@
 import { useAuth } from "../../hook/auth";
 import { useFavorites } from "../../hook/favorites";
+import { useCart } from "../../hook/cart";
+
 
 import { useState, useEffect } from "react";
 import { api } from "../../services/api";
@@ -22,6 +24,8 @@ export function Home() {
   const [search, setSearch] = useState("");
 
   const { favorites } = useFavorites();
+
+  
 
   // async function handleFavorites(favorite) {
   //   if (favorite.length === 0) {

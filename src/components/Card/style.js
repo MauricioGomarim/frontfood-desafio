@@ -76,12 +76,12 @@ export const Container = styled.div`
 
     .add {
       margin-left: 20px;
-      a {
+
         padding: 10px 30px;
         color: ${({ theme }) => theme.COLORS.WHITE};
         background-color: ${({ theme }) => theme.COLORS.RED};
         border-radius: 10px;
-      }
+
     }
   }
 `;

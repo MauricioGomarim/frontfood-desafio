@@ -57,10 +57,15 @@ export const Content = styled.div`
       font-weight: 700;
       font-size: 20px;
       color: ${({ theme }) => theme.COLORS.WHITE};
-      max-width: 200px;
+      max-width: 100%;
+      gap: 20px;
 
       > a {
-        width: 100%;
+        width: fit-content;
+      }
+
+      > button {
+        width: fit-content;
       }
 
       .quantidade {

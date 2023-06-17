@@ -1,6 +1,7 @@
 import { Container, Content, Form } from "./style";
 import { ButtonText } from "../../components/ButtonText";
 import { Button } from "../../components/Button";
+import { Link } from "react-router-dom";
 
 import { SectionLabel } from "../../components/SectionLabel";
 import { IngredientsTag } from "../../components/IngredientsTag";
@@ -9,7 +10,7 @@ import { MdKeyboardArrowLeft } from "react-icons/md";
 import { BsUpload } from "react-icons/bs";
 
 import { api } from "../../services/api";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../hook/auth";
 
@@ -25,6 +26,8 @@ export function EditarPrato() {
   const [image, setImage] = useState(null);
   const [newIngredient, setNewIngredient] = useState("");
   const user = useAuth();
+
+  const navigate = useNavigate()
 
   async function handleEditarPrato() {
     if (!image) {
@@ -76,6 +79,8 @@ export function EditarPrato() {
         }
       })
       .then(alert("Prato editado com sucesso!"));
+
+      navigate("/")
   }
 
   function handleAddIngredient() {
@@ -117,9 +122,9 @@ export function EditarPrato() {
       <Header />
       {data && (
         <main>
-          <a href="#">
+          <Link to={"/"}>
             <ButtonText title="voltar" icon={MdKeyboardArrowLeft} />
-          </a>
+          </Link>
 
           <Content>
             <h1>Editar prato</h1>
@@ -154,7 +159,7 @@ export function EditarPrato() {
                   onChange={(e) => setCategory(e.target.value)}
                 >
                   <option disabled selected>
-                    Refeição
+                    Selecione...
                   </option>
                   <option value="Refeição">Refeição</option>
                   <option value="Bebida">Bebida</option>

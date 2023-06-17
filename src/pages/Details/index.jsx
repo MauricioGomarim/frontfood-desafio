@@ -9,19 +9,29 @@ import imgProduct from "../../assets/Mask group-1.png";
 import { MdRemove, MdOutlineAdd } from "react-icons/md";
 
 import { api } from "../../services/api";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../hook/auth";
 import { Link } from "react-router-dom";
+
 
 export function Details() {
   const params = useParams();
   const [data, setData] = useState("");
   const user = useAuth();
 
+  const navigate = useNavigate();
+
   const imgURL = data.image
-  ? `${api.defaults.baseURL}/files/${data.image}`
-  : imgProduct;
+    ? `${api.defaults.baseURL}/files/${data.image}`
+    : imgProduct;
+
+  async function handleDelete() {
+    await api.delete(`/pratos/${params.id}`);
+    navigate("/");
+    return
+
+  }
 
   useEffect(() => {
     async function buscarDadosPrato() {
@@ -35,10 +45,10 @@ export function Details() {
   return (
     <Container>
       <Header />
-        {
-          data && (
-            <main>
-            <Link to="/">
+      {
+        data && (
+          <main>
+            <Link to={"/"}>
               <MdKeyboardArrowLeft />
               voltar
             </Link>
@@ -54,28 +64,35 @@ export function Details() {
                     <Tag title={ingredient.name} />
                   ))}
                 </SectionTags>
-    
+
                 {user.isAdmin ? (
                   <div className="card-footer">
-                  <div className="quantidade">
-                    <MdRemove />
-                    <p>01</p>
-                    <MdOutlineAdd />
+                    <div className="quantidade">
+                      <MdRemove />
+                      <p>01</p>
+                      <MdOutlineAdd />
+                    </div>
+                    <div className="add">
+                      <a href="#">incluir ∙ R$ 25,00</a>
+                    </div>
                   </div>
-                  <div className="add">
-                    <a href="#">incluir ∙ R$ 25,00</a>
-                  </div>
-                </div>
-                   
-                  
+
+
                 ) : (
-                  <div className="card-footer"><Link to={`/editarprato/${data.id}`}><Button title="Editar preto" /></Link></div>
+                  <div className="card-footer">
+                    <Link to={`/editarprato/${data.id}`}>
+                      <Button title="Editar prato" />
+                    </Link>
+
+                    <Button title="Excluir prato" onClick={handleDelete} />
+
+                  </div>
                 )}
               </div>
             </Content>
           </main>
-          )
-        }
+        )
+      }
     </Container>
   );
 }

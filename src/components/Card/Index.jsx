@@ -8,12 +8,21 @@ import { Link } from "react-router-dom";
 
 import { useAuth } from "../../hook/auth";
 import { useFavorites } from "../../hook/favorites";
+import { useCart } from "../../hook/cart";
+
 
 export function Card({ data, ...rest }) {
   const { user } = useAuth();
+  const { addDishToCart } = useCart();
   const { favorites, addDishToFavorite, removeDishFromFavorite } = useFavorites();
 
     const isFavorite = favorites.some((dish) => dish.title === data.title)
+
+    function handleAddCart(){
+      addDishToCart(data)
+      return
+    }
+
 
   const imgURL = data.image
     ? `${api.defaults.baseURL}/files/${data.image}`
@@ -44,8 +53,8 @@ export function Card({ data, ...rest }) {
               <p>01</p>
               <MdOutlineAdd />
             </div>
-            <div className="add">
-              <a href="#">incluir</a>
+            <div className="add" onClick={handleAddCart}>
+              incluir
             </div>
           </div>
         </div>
@@ -76,8 +85,8 @@ export function Card({ data, ...rest }) {
               <p>01</p>
               <MdOutlineAdd />
             </div>
-            <div className="add">
-              <a href="#">incluir</a>
+            <div className="add" onClick={addDishToCart(data)}>
+              incluir
             </div>
           </div>
         </div>

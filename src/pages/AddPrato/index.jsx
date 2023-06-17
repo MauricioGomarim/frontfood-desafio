@@ -3,6 +3,7 @@ import { ButtonText } from "../../components/ButtonText";
 import { Button } from "../../components/Button";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { SectionLabel } from "../../components/SectionLabel";
 import { IngredientsTag } from "../../components/IngredientsTag";
@@ -91,15 +92,18 @@ export function AddPrato() {
           alert("Erro ao criar o prato!");
         }
       }).then(alert("Prato adicionado com sucesso!"));
+      
+      navigate("/");
+      return
   }
 
   return (
     <Container>
       <Header />
       <main>
-        <a href="#">
+        <Link to={"/"}>
           <ButtonText title="voltar" icon={MdKeyboardArrowLeft} />
-        </a>
+        </Link>
 
         <Content>
           <h1>Adicionar prato</h1>
@@ -132,9 +136,9 @@ export function AddPrato() {
                 onChange={(e) => setCategory(e.target.value)}
               >
                 <option disabled selected>
-                  Refeição
+                  Selecione..
                 </option>
-                <option value="Prato">Prato</option>
+                <option value="Refeição">Refeição</option>
                 <option value="Bebida">Bebida</option>
                 <option value="Sobremesa">Sobremesa</option>
               </select>
