@@ -38,10 +38,10 @@ export function Details() {
         {
           data && (
             <main>
-            <a href="">
+            <Link to="/">
               <MdKeyboardArrowLeft />
               voltar
-            </a>
+            </Link>
             <Content>
               <div className="col1">
                 <img src={imgURL} alt="" />

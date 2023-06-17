@@ -73,6 +73,7 @@ export const Container = styled.header`
         padding: 15px 40px;
         color: ${({ theme }) => theme.COLORS.WHITE};
         width: 100%;
+        height: 100%;
       }
 
       > svg {

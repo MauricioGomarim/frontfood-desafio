@@ -6,13 +6,17 @@ import { ThemeProvider } from "styled-components";
 import theme from "./styles/theme";
 
 import { AuthProvider } from "./hook/auth";
+import { FavoritesProvider } from "./hook/favorites";
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <AuthProvider>
-        <Routes />
+        <FavoritesProvider>
+          <Routes />
+        </FavoritesProvider>
       </AuthProvider>
     </ThemeProvider>
   </React.StrictMode>

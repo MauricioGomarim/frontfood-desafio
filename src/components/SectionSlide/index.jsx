@@ -1,8 +1,8 @@
 import { Container } from "./style"
 
-export function SectionSlide({ children}) {
+export function SectionSlide({ children, ...rest}) {
     return(
-        <Container >
+        <Container {...rest}>
             {children}
         </Container>
     );

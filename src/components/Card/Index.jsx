@@ -7,13 +7,19 @@ import { TbEdit } from "react-icons/tb";
 import { Link } from "react-router-dom";
 
 import { useAuth } from "../../hook/auth";
+import { useFavorites } from "../../hook/favorites";
 
 export function Card({ data, ...rest }) {
   const { user } = useAuth();
+  const { favorites, addDishToFavorite, removeDishFromFavorite } = useFavorites();
+
+    const isFavorite = favorites.some((dish) => dish.title === data.title)
 
   const imgURL = data.image
     ? `${api.defaults.baseURL}/files/${data.image}`
     : img1;
+
+
   return (
     <Container {...rest}>
       {user.isAdmin ? (
@@ -24,10 +30,12 @@ export function Card({ data, ...rest }) {
             </Link>
           </div>
           <div className="Infos-card">
-            <img src={imgURL} alt="produto" />
-            <h2>{data.title}</h2>
-            <p>{data.description}</p>
-            <h1>R$ {data.price}</h1>
+            <Link to={`/details/${data.id}`}>
+              <img src={imgURL} alt="produto" />
+              <h2>{data.title}</h2>
+              <p>{data.description}</p>
+              <h1>R$ {data.price}</h1>
+            </Link>
           </div>
 
           <div className="card-footer">
@@ -44,7 +52,16 @@ export function Card({ data, ...rest }) {
       ) : (
         <div className="Container">
           <div className="icon">
-            <AiOutlineHeart />
+            <button
+              className="favButton"
+              onClick={() =>
+                isFavorite
+                  ? removeDishFromFavorite(data)
+                  : addDishToFavorite(data)
+              }
+            >
+              {isFavorite ? <AiFillHeart /> : <AiOutlineHeart />}
+            </button>
           </div>
           <div className="Infos-card">
             <img src={imgURL} alt="produto" />

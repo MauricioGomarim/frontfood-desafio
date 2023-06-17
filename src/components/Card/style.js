@@ -5,7 +5,10 @@ export const Container = styled.div`
   text-align: center;
   margin-top: 1rem;
   padding: 40px 0 50px 0;
-
+  .favButton {
+    background: transparent;
+    border: none;
+  }
   .Container .icon svg {
     color: ${({ theme }) => theme.COLORS.WHITE};
     font-size: 32px;

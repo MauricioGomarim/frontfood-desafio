@@ -8,7 +8,7 @@ import { BsSearch, BsReceipt } from "react-icons/bs";
 import { FiLogOut } from "react-icons/fi";
 import logo from "../../assets/logo.png";
 
-export function Header() {
+export function Header({search, favoritesFilter}) {
   const { Logout, user } = useAuth();
 
   function handleLogout() {
@@ -19,11 +19,13 @@ export function Header() {
     <Container>
       <nav>
         <div>
-          <img src={logo} alt="" />
+          <Link to="/">
+            <img src={logo} alt="" />
+          </Link>
         </div>
         <div>
           <BsSearch />
-          <input placeholder="Busque por pratos ou ingredientes" />
+          <input placeholder="Busque por pratos ou ingredientes"  onChange={e => {search(e.target.value)}}/>
         </div>
         <div className="newDish">
           {user.isAdmin ? (
@@ -31,10 +33,10 @@ export function Header() {
               <Button title="Novo pedido" />
             </Link>
           ) : (
-            <a href="#">
+            <Link to="#">
               <BsReceipt />
               Pedidos(0)
-            </a>
+            </Link>
           )}
           <FiLogOut onClick={handleLogout} />
         </div>
