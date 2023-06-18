@@ -20,7 +20,7 @@ import { Card } from "../../components/Card/Index";
 import imgBanner from "../../assets/image-banner.png";
 
 export function Home() {
-  const [pratos, setPratos] = useState([]);
+  const [pratos, setPratos] = useState([""]);
   const [search, setSearch] = useState("");
 
   const { favorites } = useFavorites();
