@@ -68,10 +68,19 @@ export const Container = styled.div`
       display: flex;
       gap: 10px;
 
-      > svg {
-        font-size: 30px;
+      > div {
+        margin-top: 0 !important;
+
+        a {
+          display: flex;
+        }
+
+        > svg{
+          font-size: 30px;
         cursor: pointer;
+        }
       }
+
     }
 
     .add {

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 
 import { useAuth } from "../../hook/auth";
+import { useCart } from "../../hook/cart";
+
 import { useState } from "react";
 import { Button } from "../Button";
 import { Container } from "./style";
@@ -10,6 +12,8 @@ import logo from "../../assets/logo.png";
 
 export function Header({search, favoritesFilter}) {
   const { Logout, user } = useAuth();
+  const { carts } = useCart();
+console.log(carts.length)
 
   function handleLogout() {
     Logout();
@@ -35,7 +39,7 @@ export function Header({search, favoritesFilter}) {
           ) : (
             <Link to="#">
               <BsReceipt />
-              Pedidos(0)
+              Pedidos({carts.length})
             </Link>
           )}
           <FiLogOut onClick={handleLogout} />
