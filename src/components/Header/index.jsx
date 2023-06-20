@@ -31,13 +31,17 @@ console.log(carts.length)
           <BsSearch />
           <input placeholder="Busque por pratos ou ingredientes"  onChange={e => {search(e.target.value)}}/>
         </div>
+        <div>
+        <Link to="/meus-favoritos">Meus favoritos</Link>
+        <Link to="/addprato">Novo prato</Link>
+        </div>
         <div className="newDish">
           {user.isAdmin ? (
-            <Link to="/addprato">
-              <Button title="Novo pedido" />
+            <Link to="/historico-pedidos">
+              <Button title="Historico de pedidos" />   
             </Link>
           ) : (
-            <Link to="#">
+            <Link to="/cart">
               <BsReceipt />
               Pedidos({carts.length})
             </Link>

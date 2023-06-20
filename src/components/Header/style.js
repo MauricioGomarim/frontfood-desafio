@@ -7,7 +7,7 @@ export const Container = styled.header`
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
 
   > nav {
-    width: 80%;
+    width: 85%;
     max-width: 100%;
     margin: 0 auto;
     display: flex;
@@ -31,7 +31,7 @@ export const Container = styled.header`
       justify-content: center;
     }
     > div:nth-child(2) {
-      width: 48%;
+      width: 28%;
       margin-right: 2%;
       display: flex;
       gap: 10px;
@@ -55,7 +55,26 @@ export const Container = styled.header`
       }
     }
     > div:nth-child(3) {
-      width: 25%;
+      width: 23%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-right: 2%;
+
+      font-family: "Poppins";
+
+      > a {
+        font-size: 16px;
+        color: ${({ theme }) => theme.COLORS.WHITE};
+        display: flex;
+        align-items: center;
+        width: 50%;
+        justify-content: center;
+      }
+    }
+    > div:nth-child(4) {
+      width: 20%;
       display: flex;
       align-items: center;
       gap: 20px;
@@ -74,6 +93,7 @@ export const Container = styled.header`
         color: ${({ theme }) => theme.COLORS.WHITE};
         width: 100%;
         height: 100%;
+        font-size: 16px;
       }
 
       > svg {

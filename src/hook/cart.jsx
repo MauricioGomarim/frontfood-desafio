@@ -6,6 +6,7 @@ function CartsProvider({ children }) {
   const [carts, setCart] = useState(
     JSON.parse(localStorage.getItem(`@foodexplorer:carts`)) || []
   );
+  const [orders, setOrders] = useState([])
 
   function addDishToCart(data, quantity, image) {
     try {
@@ -46,6 +47,8 @@ function CartsProvider({ children }) {
         total: String(total.toFixed(2)).replace('.', ','),
         carts,
         addDishToCart,
+        orders,
+        setOrders,
         removeDishFromCart,
       }}
     >

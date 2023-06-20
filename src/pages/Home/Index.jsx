@@ -66,7 +66,7 @@ export function Home() {
             <Swiper
               grabCursor={true}
               loop={false}
-              loopFillGroupWithBlank={true}
+             
               breakpoints={{
                 "@0.00": {
                   slidesPerView: 1,
@@ -108,7 +108,7 @@ export function Home() {
             <Swiper
               grabCursor={true}
               loop={true}
-              loopFillGroupWithBlank={true}
+              
               breakpoints={{
                 "@0.00": {
                   slidesPerView: 1,

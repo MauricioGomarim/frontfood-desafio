@@ -110,7 +110,7 @@ export function Card({ data, ...rest }) {
           </div>
         </div>
       )}
-      ;
+      
     </Container>
   );
 }
