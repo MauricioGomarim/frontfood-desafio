@@ -15,6 +15,11 @@ function CartsProvider({ children }) {
 
       const order = { id, title, price: priceFormatted, image, quantity };
 
+      const orderExists = carts.some((userOrder) => userOrder.title === order.title)
+      if (orderExists) {
+          return alert("Esse item já está no carrinho")
+      }
+
       setCart((prevState) => [...prevState, order]);
       console.log(carts);
     } catch (error) {
@@ -28,8 +33,8 @@ function CartsProvider({ children }) {
     alert("Item adicionado ao carrinho");
   }
 
-  function removeDishFromCart(data) {
-    setCart(carts.filter((dish) => dish.id !== data.id));
+  function removeDishFromCart(deleted) {
+    setCart(prevState => prevState.filter(item => item.id !== deleted))
   }
 
   const total = carts.reduce((value, item) => {

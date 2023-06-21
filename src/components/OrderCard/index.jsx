@@ -5,7 +5,7 @@ import { ButtonText } from "../ButtonText";
 import { useCart } from '../../hook/cart';
 
 export function OrderCard({data}) { 
-    const { handleRemoveDishFromCart, paymentAccept } = useCart();
+    const { removeDishFromCart } = useCart();
 
     return(
         <Container>
@@ -17,7 +17,7 @@ export function OrderCard({data}) {
                     <p><strong>{data.quantity} x </strong>{data.title} <span>R${data.price}</span></p>
                     <ButtonText 
                         title="Excluir"
-                        onClick={() => handleRemoveDishFromCart(data.id)}
+                        onClick={() => removeDishFromCart(data.id)}
                     />
                 </div>
                 

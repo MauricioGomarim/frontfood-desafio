@@ -25,15 +25,6 @@ export function Home() {
 
   const { favorites } = useFavorites();
 
-  
-
-  // async function handleFavorites(favorite) {
-  //   if (favorite.length === 0) {
-  //     return;
-  //   }
-  //   setPratos(favorites);
-  // }
-
   useEffect(() => {
     async function fetchDishes() {
       const response = await api.get(`/pratos?title=${search}`);
@@ -41,6 +32,7 @@ export function Home() {
     }
     fetchDishes();
   }, [search]);
+  
   return (
     <Container>
       <Header

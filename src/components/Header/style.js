@@ -6,6 +6,9 @@ export const Container = styled.header`
   padding: 30px 0;
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
 
+  .search {
+    position: relative;
+  }
   > nav {
     width: 85%;
     max-width: 100%;
@@ -107,3 +110,13 @@ export const Container = styled.header`
     }
   }
 `;
+
+export const Busca = styled.div`
+
+  background-color: #065e7c;
+  width: 100%;
+  position: absolute;
+  min-height: 100px;
+  left: 0;
+  top: 100%;
+`

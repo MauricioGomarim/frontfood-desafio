@@ -43,7 +43,7 @@ export function Cart() {
 // Capturando itens do carrinho para cadastro
   function handleCreatedCart(carts) {
     return {
-      orderStatus: "🔴 Pendente",
+      orderStatus: "🟡 Pendente",
       paymentMethod: pixActive ? "pix" : "creditCard",
       totalPrice: total,
       cart: carts.map((item) => ({
@@ -178,8 +178,8 @@ export function Cart() {
                 <h2>Meu pedido</h2>
                 <div className="details">
                   {carts &&
-                    carts.map((item) => (
-                      <OrderCard key={String(item.id)} data={item} />
+                    carts.map((item, index) => (
+                      <OrderCard key={index} data={item} />
                     ))}
                 </div>
 
