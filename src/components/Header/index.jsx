@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { useAuth } from "../../hook/auth";
 import { useCart } from "../../hook/cart";
-
 import { useState } from "react";
 import { Button } from "../Button";
 import { Container } from "./style";
@@ -11,12 +10,14 @@ import { FiLogOut } from "react-icons/fi";
 import logo from "../../assets/logo.png";
 
 export function Header({search, favoritesFilter}) {
+  const navigate = useNavigate()
   const { Logout, user } = useAuth();
   const { carts } = useCart();
 console.log(carts.length)
 
   function handleLogout() {
     Logout();
+    navigate("/");
     return;
   }
   return (
@@ -33,7 +34,12 @@ console.log(carts.length)
         </div>
         <div>
         <Link to="/meus-favoritos">Meus favoritos</Link>
-        <Link to="/addprato">Novo prato</Link>
+        
+        {user.isAdmin ? (
+          <Link to="/addprato">Novo prato</Link>
+        ) : (
+          <Link to="/historico-pedidos">Historico de pedidos</Link>
+        )}
         </div>
         <div className="newDish">
           {user.isAdmin ? (

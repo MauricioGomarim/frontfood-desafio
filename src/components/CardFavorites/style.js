@@ -12,6 +12,12 @@ export const Container = styled.div`
         font-size: 20px;
     }
 
+    .text {
+      div {
+        margin: 0;
+      }
+    }
+
     img {
         max-width: 100px;
     }

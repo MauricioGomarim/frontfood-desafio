@@ -15,6 +15,11 @@ export function MyFavorites() {
       <main>
         <h1>Meus favoritos</h1>
         <div className="Container-cards">
+          {favorites.length < 1 && (
+            <h1>Sem nenhum prato favorito por aqui 😥</h1>
+          )
+
+          }
           {favorites.map((item, index) => (
             <CardFavorites data={item} key={index} />
           ))}

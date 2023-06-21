@@ -47,7 +47,7 @@ export function Card({ data, ...rest }) {
       {user.isAdmin ? (
         <div className="Container">
           <div className="icon">
-            <Link to={`/details/${data.id}`}>
+            <Link to={`/editarprato/${data.id}`}>
               <TbEdit />
             </Link>
           </div>
@@ -58,20 +58,6 @@ export function Card({ data, ...rest }) {
               <p>{data.description}</p>
               <h1>R$ {data.price}</h1>
             </Link>
-          </div>
-
-          <div className="card-footer">
-            <div className="quantidade">
-              <ButtonText icon={MdRemove} onClick={decrease} />
-              <p>{quantity}</p>
-              <ButtonText icon={MdOutlineAdd} onClick={increase} />
-            </div>
-            <div
-              className="add"
-              onClick={() => addDishToCart(data, quantity, imgURL)}
-            >
-              incluir
-            </div>
           </div>
         </div>
       ) : (

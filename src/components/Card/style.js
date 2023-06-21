@@ -16,8 +16,8 @@ export const Container = styled.div`
   .Container .icon {
     width: fit-content;
     position: absolute;
-    right: 10%;
-    top: 10%;
+    right: 5%;
+    top: 5%;
   }
 
   > .Container .Infos-card {
@@ -90,7 +90,7 @@ export const Container = styled.div`
         color: ${({ theme }) => theme.COLORS.WHITE};
         background-color: ${({ theme }) => theme.COLORS.RED};
         border-radius: 10px;
-
+        cursor: pointer;
     }
   }
 `;

@@ -51,6 +51,10 @@ export default createGlobalStyle`
         text-decoration: none;
     }
 
+    input {
+        outline: none;
+    }
+
     button,a{
         cursor: pointer;
         transition: filter 0.2s;

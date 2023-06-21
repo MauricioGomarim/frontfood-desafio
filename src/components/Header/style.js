@@ -25,14 +25,14 @@ export const Container = styled.header`
 
     > div:nth-child(1) {
       width: 23%;
-      margin-right: 2%;
+      margin-right: 1%;
       display: flex;
       align-items: center;
       justify-content: center;
     }
     > div:nth-child(2) {
-      width: 28%;
-      margin-right: 2%;
+      width: 25%;
+      margin-right: 1%;
       display: flex;
       gap: 10px;
       align-items: center;
@@ -53,14 +53,16 @@ export const Container = styled.header`
         font-size: 16px;
         color: ${({ theme }) => theme.COLORS.WHITE};
       }
+
+      
     }
     > div:nth-child(3) {
-      width: 23%;
+      width: 29%;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      margin-right: 2%;
+      margin-right: 1%;
 
       font-family: "Poppins";
 
@@ -71,6 +73,7 @@ export const Container = styled.header`
         align-items: center;
         width: 50%;
         justify-content: center;
+        text-align: center;
       }
     }
     > div:nth-child(4) {

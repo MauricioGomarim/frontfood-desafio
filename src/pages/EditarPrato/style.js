@@ -38,12 +38,22 @@ export const Form = styled.form`
   display: flex;
   flex-wrap: wrap;
   gap: 5%;
+  font-size: 15px;
   .r1-col1 {
     width: 20%;
+    div {
+      height: 50px;
+      display: flex;
+      justify-content: center;
+    }
   }
 
   .r1-col3 {
     width: 20%;
+    div {
+      height: 50px;
+      display: flex;
+    }
 
     select {
       width: 100%;
@@ -59,17 +69,26 @@ export const Form = styled.form`
 
   .r1-col2 {
     width: 50%;
+    div {
+      height: 50px;
+      display: flex;
+    }
   }
 
   .r2-col1 {
     margin-top: 26px;
     width: 75%;
 
+    input {
+      min-width: 100px;
+    }
+
     > div {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       padding: 5px !important;
+      height: 50px;
 
       p {
         background-color: ${({ theme }) => theme.COLORS.GRAY_100};
@@ -85,6 +104,10 @@ export const Form = styled.form`
 
   .r2-col2 {
     width: 20%;
+    div {
+      height: 50px;
+      display: flex;
+    }
 
     margin-top: 26px;
   }

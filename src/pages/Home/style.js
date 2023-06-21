@@ -25,6 +25,10 @@ export const Container = styled.div`
       margin-bottom: 25px;
       margin-top: 64px;
     }
+
+    .banner img {
+      width: 100%;
+    }
   }
 `;
 
