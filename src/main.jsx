@@ -12,7 +12,7 @@ import { CartsProvider } from "./hook/cart";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <AuthProvider>
@@ -23,5 +23,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </FavoritesProvider>
       </AuthProvider>
     </ThemeProvider>
-  </React.StrictMode>
+
 );

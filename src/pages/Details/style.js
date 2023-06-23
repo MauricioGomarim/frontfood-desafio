@@ -59,36 +59,41 @@ export const Content = styled.div`
       color: ${({ theme }) => theme.COLORS.WHITE};
       max-width: 100%;
       gap: 20px;
-
       > a {
         width: fit-content;
       }
 
-      > button {
-        width: fit-content;
+      .add {
+        margin-left: 20px;
+        padding: 10px 30px;
+        color: ${({ theme }) => theme.COLORS.WHITE};
+        background-color: ${({ theme }) => theme.COLORS.RED};
+        border-radius: 10px;
+        cursor: pointer;
+        a {
+          color: white;
+        }
       }
 
       .quantidade {
         display: flex;
         gap: 10px;
 
-        > svg {
-          font-size: 30px;
-          cursor: pointer;
+        > div {
+          margin-top: 0 !important;
+
+          a {
+            display: flex;
+          }
+
+          > svg {
+            font-size: 30px;
+            cursor: pointer;
+          }
         }
       }
-
-      .add {
-        margin-left: 20px;
-        a {
-            text-align: center;
-            display: flex;
-            font-size: 20px;
-          padding: 10px 30px;
-          color: ${({ theme }) => theme.COLORS.WHITE};
-          background-color: ${({ theme }) => theme.COLORS.RED};
-          border-radius: 10px;
-        }
+      > button {
+        width: fit-content;
       }
     }
   }

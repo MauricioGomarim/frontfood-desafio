@@ -1,14 +1,13 @@
 // Styling Imports
 import { Container, Content, PaymentCard } from "./styles.js";
 
-import { Header } from "../../components/Header"
+import { Header } from "../../components/Header";
 
 // Components Imports
 import { OrderCard } from "../../components/OrderCard";
 import { Input } from "../../components/InputPayment";
 import { Button } from "../../components/Button";
-
-
+import { Footer } from "../../components/Footer";
 
 // Strategic Imports (API and others)
 import { api } from "../../services/api";
@@ -18,7 +17,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { PageError } from "../../components/PageError";
-
 
 // Image Imports
 import { BsReceipt } from "react-icons/bs";
@@ -30,17 +28,15 @@ import clock from "../../assets/clock.svg";
 import checkCircle from "../../assets/CheckCircle.svg";
 
 export function Cart() {
-
   const { user } = useAuth();
 
-  const { carts, total, handleResetCart } = useCart();
+  const { carts, total } = useCart();
 
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
-
-// Capturando itens do carrinho para cadastro
+  // Capturando itens do carrinho para cadastro
   function handleCreatedCart(carts) {
     return {
       orderStatus: "🟡 Pendente",
@@ -54,8 +50,7 @@ export function Cart() {
     };
   }
 
- 
-// Função de Finalização de Pagamento
+  // Função de Finalização de Pagamento
   async function handleFinishPayment(carts) {
     const newCart = handleCreatedCart(carts);
 
@@ -88,7 +83,6 @@ export function Cart() {
         setTimeout(() => {
           alert("Pedido cadastrado com sucesso!");
           navigate(-1);
-          handleResetCart();
 
           // Delay
         }, 7000);
@@ -117,7 +111,7 @@ export function Cart() {
     setCvc(event.target.value.slice(0, limit));
   };
 
-// Botões de pagamento e telas de alteração
+  // Botões de pagamento e telas de alteração
   const [isPixVisible, setIsPixVisible] = useState(false);
   const [isCreditVisible, setIsCreditVisible] = useState(false);
   const [isCartVisible, setIsCartVisible] = useState(true);
@@ -142,7 +136,7 @@ export function Cart() {
     setPixActive(false);
   };
 
-// Desativar botões e alterar telas
+  // Desativar botões e alterar telas
   const [disabledButton, setDisabledButton] = useState(false);
 
   const disableButton = () => {
@@ -154,7 +148,6 @@ export function Cart() {
     setIsClockActive(true);
     setIsApprovedActive(false);
     setTimeout(() => {
-  
       setIsClockActive(false);
       setIsApprovedActive(true);
 
@@ -171,8 +164,6 @@ export function Cart() {
           <PageError />
         ) : (
           <Content>
-    
-
             <div className="card-wrapper">
               <div className="order-wrapper">
                 <h2>Meu pedido</h2>
@@ -328,7 +319,9 @@ export function Cart() {
             </div>
           </Content>
         )}
+        
       </Container>
+      <Footer />
     </>
   );
 }

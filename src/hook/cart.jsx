@@ -21,7 +21,6 @@ function CartsProvider({ children }) {
       }
 
       setCart((prevState) => [...prevState, order]);
-      console.log(carts);
     } catch (error) {
       if (error.response) {
         alert(error.response.data.message);
@@ -43,7 +42,6 @@ function CartsProvider({ children }) {
 
   useEffect(() => {
     localStorage.setItem(`@foodexplorer:carts`, JSON.stringify(carts));
-    console.log(total)
   }, [carts]);
 
   return (

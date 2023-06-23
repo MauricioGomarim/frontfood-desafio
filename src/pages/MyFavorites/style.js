@@ -5,7 +5,7 @@ export const Container = styled.div`
   font-style: normal;
   display: flex;
   flex-direction: column;
-
+  height: 100vh;
   width: 100%;
   min-width: 320px;
   min-height: 100%;
@@ -50,5 +50,9 @@ export const Container = styled.div`
     img {
         max-width: 100px;
     }
+
+
   }
+
+
 `;

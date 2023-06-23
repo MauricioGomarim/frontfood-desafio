@@ -1,5 +1,6 @@
 import { Container, Content, Form } from "./style";
 import { ButtonText } from "../../components/ButtonText";
+import { Footer } from "../../components/Footer"
 import { Button } from "../../components/Button";
 import { Link } from "react-router-dom";
 
@@ -203,6 +204,7 @@ export function EditarPrato() {
           </Content>
         </main>
       )}
+      <Footer />
     </Container>
   );
 }

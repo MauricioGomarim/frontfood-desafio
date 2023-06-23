@@ -31,6 +31,9 @@ export const Content = styled.section`
     font-weight: 500;
     font-size: 32px;
     margin-bottom: 32px;
+    @media (max-width:425px) {
+        font-size: 25px;
+    }
   }
 `;
 
@@ -45,6 +48,9 @@ export const Form = styled.form`
       height: 50px;
       display: flex;
       justify-content: center;
+    }
+    @media (max-width: 768px) {
+      width: 100%;
     }
   }
 
@@ -65,10 +71,16 @@ export const Form = styled.form`
         background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
       }
     }
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 
   .r1-col2 {
     width: 50%;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
     div {
       height: 50px;
       display: flex;
@@ -78,6 +90,9 @@ export const Form = styled.form`
   .r2-col1 {
     margin-top: 26px;
     width: 75%;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
 
     input {
       min-width: 100px;
@@ -88,7 +103,7 @@ export const Form = styled.form`
       flex-wrap: wrap;
       gap: 20px;
       padding: 5px !important;
-      height: 50px;
+      min-height: 50px;
 
       p {
         background-color: ${({ theme }) => theme.COLORS.GRAY_100};
@@ -104,6 +119,9 @@ export const Form = styled.form`
 
   .r2-col2 {
     width: 20%;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
     div {
       height: 50px;
       display: flex;

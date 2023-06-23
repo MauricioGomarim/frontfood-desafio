@@ -1,6 +1,7 @@
 import { Container, Content, Form } from "./style";
 import { ButtonText } from "../../components/ButtonText";
 import { Button } from "../../components/Button";
+import { Footer } from "../../components/Footer"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -183,6 +184,7 @@ export function AddPrato() {
           </Form>
         </Content>
       </main>
+      <Footer />
     </Container>
   );
 }

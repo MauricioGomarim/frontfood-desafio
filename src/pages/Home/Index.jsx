@@ -2,6 +2,7 @@ import { useAuth } from "../../hook/auth";
 import { useFavorites } from "../../hook/favorites";
 import { useCart } from "../../hook/cart";
 
+import { Footer } from "../../components/Footer"
 
 import { useState, useEffect } from "react";
 import { api } from "../../services/api";
@@ -15,6 +16,7 @@ import { Navigation } from "swiper";
 import { Container, Section } from "./style";
 import { Header } from "../../components/Header";
 import { Card } from "../../components/Card/Index";
+
 
 // import img banner //
 import imgBanner from "../../assets/image-banner.png";
@@ -42,10 +44,10 @@ export function Home() {
 
       <main>
         <Section className="banner">
-          <div>
+          <div className="image-banner">
             <img src={imgBanner} alt="" />
           </div>
-          <div>
+          <div className="text-banner">
             <h1>Sabores inigual</h1>
             <p>Sinta o cuidado do preparo com ingredientes selecionados</p>
           </div>
@@ -138,6 +140,8 @@ export function Home() {
         <p>Bebidas</p>
         <div></div>
       </main>
+
+      <Footer />
     </Container>
   );
 }

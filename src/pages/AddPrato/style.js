@@ -4,6 +4,7 @@ export const Container = styled.section`
   font-family: "Poppins", sans-serif;
   color: ${({ theme }) => theme.COLORS.WHITE};
 
+
   #image-prato {
     display: none;
   }
@@ -31,10 +32,15 @@ export const Container = styled.section`
 
 export const Content = styled.section`
   margin-top: 24px;
+  margin-bottom: 50px;
+  
   > h1 {
     font-weight: 500;
     font-size: 32px;
     margin-bottom: 32px;
+    @media (max-width:425px) {
+        font-size: 25px;
+    }
   }
 `;
 
@@ -51,6 +57,10 @@ export const Form = styled.form`
       height: 50px;
       display: flex;
       justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
     }
   }
 
@@ -72,10 +82,20 @@ export const Form = styled.form`
         background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
       }
     }
+
+    @media (max-width: 768px) {
+      width: 45%;
+    }
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 
   .r1-col2 {
     width: 50%;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
     div {
       height: 50px;
       display: flex;
@@ -89,6 +109,9 @@ export const Form = styled.form`
   .r2-col1 {
     margin-top: 26px;
     width: 75%;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
     input {
       min-width: 100px;
     }
@@ -114,6 +137,9 @@ export const Form = styled.form`
 
   .r2-col2 {
     width: 20%;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
     div {
       height: 50px;
       display: flex;

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  padding-bottom: 100px;
 
   .swiper {
     display: flex !important;
@@ -15,6 +14,7 @@ export const Container = styled.div`
     width: 80%;
     max-width: 100%;
     margin: 0 auto;
+    margin-bottom: 50px;
 
     > p {
       font-family: "Poppins";
@@ -26,8 +26,42 @@ export const Container = styled.div`
       margin-top: 64px;
     }
 
+    .banner {
+      display: flex;
+    }
+
     .banner img {
       width: 100%;
+    }
+
+    @media (max-width: 767px){
+      .banner {
+      margin-top: 20px;
+      flex-direction: column-reverse;
+  
+      .image-banner {
+        width: 100%;
+        padding: 0;
+        > img {
+          position: relative !important;
+          bottom: -8px;
+        }
+      }
+
+      .text-banner {
+        width: 100%;
+        text-align: center !important;
+        margin-top: 0;
+      }
+    }
+    }
+    @media(max-width: 426px){
+      .text-banner h1 {
+        font-size: 35px;
+      }
+      .image-banner img{
+   
+      }
     }
   }
 `;

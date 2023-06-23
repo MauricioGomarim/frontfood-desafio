@@ -3,11 +3,11 @@ import styled from "styled-components";
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    
+
     width: 100%;
     min-width: 32rem;
     height: 100vh;
-    
+
     overflow: auto;
     overflow: overlay; 
 `;
@@ -16,7 +16,6 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     color: ${({ theme }) => theme.COLORS.WHITE};
-    
     width: 100%;
     max-width: 121.2rem;
     margin: auto;

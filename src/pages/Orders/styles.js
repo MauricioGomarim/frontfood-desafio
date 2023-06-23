@@ -123,8 +123,21 @@ export const Table = styled.div`
         background: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 
         border-radius: 0.8rem;
-        border: 1px solid ${({ theme }) => theme.COLORS.WHITE};
-
+        border: 1px solid ${({ theme }) => theme.COLORS.BLUE_400};
+        outline: none;
         padding: 1.3rem 1.6rem;
     }
+
+    @media (max-width: 767px) {
+        display: none;
+    }
 `;
+
+export const Card = styled.div`
+width: 100%;
+background-color: transparent;
+
+@media (min-width: 767px) {
+        display: none;
+    }
+`

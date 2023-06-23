@@ -1,9 +1,10 @@
 // Styling Imports
-import { Container, Content, Table } from "./styles.js";
-
+import { Container, Content, Table, Card } from "./styles.js";
+import { PedidoCard } from "../../components/PedidoCard";
 
 // Components Imports
 import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
 
 // Strategic imports (API and others)
 import { api } from "../../services/api";
@@ -12,12 +13,12 @@ import { useEffect, useState } from "react";
 import { useCart } from "../../hook/cart";
 
 export function Orders() {
-
   const { user } = useAuth();
   const { orders, setOrders } = useCart();
   useEffect(() => {
     async function fetchOrders() {
       const response = await api.get("/orders");
+      console.log(response.data, 'request');
       setOrders(response.data);
     }
 
@@ -56,11 +57,9 @@ export function Orders() {
 
   return (
     <>
-
       <Container>
         <Header />
         <Content>
-
           <h1>Pedidos</h1>
 
           <Table>
@@ -137,8 +136,13 @@ export function Orders() {
               )}
             </table>
           </Table>
+
+          <Card>
+            {orders && orders.map((order) => <PedidoCard data={order} />)}
+          </Card>
         </Content>
       </Container>
+      <Footer />
     </>
   );
 }

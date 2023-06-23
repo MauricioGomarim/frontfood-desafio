@@ -4,6 +4,7 @@ import { useFavorites } from "../../hook/favorites";
 import { Container } from "./style";
 import { Header } from "../../components/Header";
 import { CardFavorites } from "../../components/CardFavorites";
+import { Footer } from "../../components/Footer";
 
 
 export function MyFavorites() {
@@ -25,6 +26,7 @@ export function MyFavorites() {
           ))}
         </div>
       </main>
+      <Footer />
     </Container>
   );
 }

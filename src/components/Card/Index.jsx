@@ -29,7 +29,6 @@ export function Card({ data, ...rest }) {
     setQuantity((count) => count + 1);
   };
 
-  //====decrease quantity====//
   const decrease = () => {
     if (quantity < 2) {
       alert("Erro: A quantidade mínima é 1 unidade");
@@ -75,10 +74,12 @@ export function Card({ data, ...rest }) {
             </button>
           </div>
           <div className="Infos-card">
+          <Link to={`/details/${data.id}`}>
             <img src={imgURL} alt="produto" />
             <h2>{data.title}</h2>
             <p>{data.description}</p>
             <h1>R$ {data.price}</h1>
+            </Link>
           </div>
 
           <div className="card-footer">
