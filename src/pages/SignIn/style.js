@@ -7,6 +7,11 @@ export const Container = styled.div`
     align-items: center;
     flex-wrap: wrap;
     height: 100vh;
+
+    @media (max-width: 769px) {
+        flex-direction: column;
+        justify-content: center;
+    }
     
 
     >img {
@@ -31,10 +36,23 @@ export const Form = styled.form`
         font-size: 32px;
     }
 
+    a {
+        color: white;
+    }
+
+    @media (max-width: 769px) {
+      width: 80%;
+    }
+
 `
 
 export const Logo = styled.div`
     width: 50%;
     display: flex;
     justify-content: center;
+
+    
+    @media (max-width: 769px) {
+      margin-bottom: 50px;
+    }
 `

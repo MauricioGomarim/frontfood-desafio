@@ -14,6 +14,11 @@ export const Container = styled.div`
         width: 50%;
     }
 
+    @media (max-width: 769px) {
+        flex-direction: column;
+        justify-content: center;
+    }
+
 `
 
 export const Form = styled.form`
@@ -31,10 +36,18 @@ export const Form = styled.form`
         font-size: 32px;
     }
 
+    @media (max-width: 769px) {
+      width: 80%;
+    }
+
 `
 
 export const Logo = styled.div`
     width: 50%;
     display: flex;
     justify-content: center;
+
+    @media (max-width: 769px) {
+      margin-bottom: 50px;
+    }
 `
