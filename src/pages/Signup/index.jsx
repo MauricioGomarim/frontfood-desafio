@@ -5,6 +5,7 @@ import { Button } from "../../components/Button";
 import { ButtonText } from "../../components/ButtonText";
 import { Text } from "../../components/Text";
 import { useState } from "react";
+import img  from "../../assets/logo.png"
 
 import {api} from "../../services/api"
 
@@ -37,7 +38,7 @@ export function SignUp() {
   return (
     <Container>
       <Logo>
-        <img src="/src/assets/logo.png" alt="logo" />
+        <img src={img} />
       </Logo>
       <Form>
         <h1>Crie sua conta</h1>

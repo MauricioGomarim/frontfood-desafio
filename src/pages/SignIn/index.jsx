@@ -5,6 +5,7 @@ import { Container, Form, Logo } from "./style";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import { Text } from "../../components/Text";
+import img  from "../../assets/logo.png"
 
 import { Link } from "react-router-dom";
 
@@ -20,7 +21,7 @@ export function SignIn() {
   return (
     <Container>
       <Logo>
-        <img src="/src/assets/logo.png" alt="logo" />
+        <img src={img} />
       </Logo>
       <Form>
         <h1>Faça login</h1>
