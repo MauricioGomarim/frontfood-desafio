@@ -138,7 +138,46 @@ export function Home() {
         </div>
 
         <p>Bebidas</p>
-        <div></div>
+        <div>
+          {pratos.filter((prato) => prato.category == "Bebida").length >
+            0 && (
+            <Swiper
+              grabCursor={true}
+              loop={true}
+              
+              breakpoints={{
+                "@0.00": {
+                  slidesPerView: 1,
+                  spaceBetween: 10,
+                },
+                "@0.75": {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
+                "@1.00": {
+                  slidesPerView: 3,
+                  spaceBetween: 40,
+                },
+                "@1.20": {
+                  slidesPerView: 4,
+                  spaceBetween: 30,
+                },
+              }}
+              navigation
+              pagination
+              modules={[Navigation]}
+              className="mySwiper"
+            >
+              {pratos
+                .filter((prato) => prato.category == "Bebida")
+                .map((item, index) => (
+                  <SwiperSlide key={String(index)}>
+                    <Card data={item} />
+                  </SwiperSlide>
+                ))}
+            </Swiper>
+          )}
+        </div>
       </main>
 
       <Footer />

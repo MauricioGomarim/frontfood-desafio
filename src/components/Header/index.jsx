@@ -70,7 +70,7 @@ export function Header({ search, favoritesFilter }) {
         </div>
         <div className="icon-dishMobile">
           {user.isAdmin ? (
-            <Link to="/orders">
+            <Link to="/historico-pedidos">
               <BsReceipt />
               <p>{orders.length}</p>
             </Link>

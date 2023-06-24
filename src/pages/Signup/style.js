@@ -36,6 +36,10 @@ export const Form = styled.form`
         font-size: 32px;
     }
 
+    a {
+        color: white;
+    }
+
     @media (max-width: 769px) {
       width: 80%;
     }

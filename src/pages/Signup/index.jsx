@@ -47,8 +47,9 @@ export function SignUp() {
         <Input label="Senha" type="password" placeholder="No mínimo 6 caracteres" onChange={e => setPassword(e.target.value)} />
 
         <Button title="Criar conta" type="button" onClick={handleSignUp} />
-
+        <Link to="/">
         <Text title="Já tenho uma conta" />
+        </Link>
       </Form>
     </Container>
   );
