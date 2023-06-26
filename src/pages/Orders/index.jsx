@@ -1,3 +1,4 @@
+// const moment = require("moment-timezone");
 // Styling Imports
 import { Container, Content, Table, Card } from "./styles.js";
 import { PedidoCard } from "../../components/PedidoCard";
@@ -18,7 +19,7 @@ export function Orders() {
   useEffect(() => {
     async function fetchOrders() {
       const response = await api.get("/orders");
-      console.log(response.data, 'request');
+      console.log(response.data, "request");
       setOrders(response.data);
     }
 
@@ -51,98 +52,94 @@ export function Orders() {
       minutesFormatted.length == 1 ? `0${minutesFormatted}` : minutesFormatted;
 
     return `${dateFormatted.getDate()}/${monthFormatted} às ${
-      dateFormatted.getHours() - 3
+      dateFormatted.getHours()
     }h${minutesFormatted}`;
   }
 
   return (
-    <>
-      <Container>
-        <Header />
-        <Content>
-          <h1>Pedidos</h1>
+    <Container>
+      <Header />
+      <Content>
+        <h1>Pedidos</h1>
 
-          <Table>
-            <table>
-              <thead>
+        <Table>
+          <table>
+            <thead>
+              <tr>
+                <th>Status</th>
+                <th>Código</th>
+                <th>Detalhamento</th>
+                <th>Data e hora</th>
+              </tr>
+            </thead>
+
+            {orders.length < 1 && (
+              <tbody>
                 <tr>
-                  <th>Status</th>
-                  <th>Código</th>
-                  <th>Detalhamento</th>
-                  <th>Data e hora</th>
+                  <td colSpan="4">
+                    <div className="zeroOrders">
+                      <p>Não existem pedidos cadastrados ainda! =/</p>
+                    </div>
+                  </td>
                 </tr>
-              </thead>
+              </tbody>
+            )}
 
-              {orders.length < 1 && (
-                <tbody>
-                  <tr>
-                    <td colSpan="4">
-                      <div className="zeroOrders">
-                        <p>Não existem pedidos cadastrados ainda! =/</p>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              )}
+            {user.isAdmin ? (
+              <tbody className="order">
+                {orders &&
+                  orders.map((order) => (
+                    <tr key={String(order.id)}>
+                      <td>
+                        <select
+                          defaultValue={order.orderStatus}
+                          onChange={(event) => handleOrderStatus(order, event)}
+                        >
+                          <option value="🟡 Pendente">🟡 Pendente</option>
+                          <option value="🟠 Preparando">🟠 Preparando</option>
+                          <option value="🟢 Entregue">🟢 Entregue</option>
+                          <option value="🔴 Cancelado">🔴 Cancelado</option>
+                        </select>
+                      </td>
+                      <td>0000{order.id}</td>
+                      <td>
+                        {order.items.map((item) => (
+                          <span key={item.title}>
+                            {item.quantity} x {item.title} ,{" "}
+                          </span>
+                        ))}
+                      </td>
+                      <td>{formatDate(order.created_at)}</td>
+                    </tr>
+                  ))}
+              </tbody>
+            ) : (
+              <tbody className="order">
+                {orders &&
+                  orders.map((order) => (
+                    <tr key={String(order.id)}>
+                      <td>{order.orderStatus}</td>
+                      <td>0000{order.id}</td>
+                      <td>
+                        {order.items.map((item) => (
+                          <span key={item.title}>
+                            {item.quantity} x {item.title} ,{" "}
+                          </span>
+                        ))}
+                      </td>
+                      <td>{formatDate(order.created_at)}</td>
+                    </tr>
+                  ))}
+              </tbody>
+            )}
+          </table>
+        </Table>
 
-              {user.isAdmin ? (
-                <tbody className="order">
-                  {orders &&
-                    orders.map((order) => (
-                      <tr key={String(order.id)}>
-                        <td>
-                          <select
-                            defaultValue={order.orderStatus}
-                            onChange={(event) =>
-                              handleOrderStatus(order, event)
-                            }
-                          >
-                            <option value="🟡 Pendente">🟡 Pendente</option>
-                            <option value="🟠 Preparando">🟠 Preparando</option>
-                            <option value="🟢 Entregue">🟢 Entregue</option>
-                            <option value="🔴 Cancelado">🔴 Cancelado</option>
-                          </select>
-                        </td>
-                        <td>0000{order.id}</td>
-                        <td>
-                          {order.items.map((item) => (
-                            <span key={item.title}>
-                              {item.quantity} x {item.title} ,{" "}
-                            </span>
-                          ))}
-                        </td>
-                        <td>{formatDate(order.created_at)}</td>
-                      </tr>
-                    ))}
-                </tbody>
-              ) : (
-                <tbody className="order">
-                  {orders &&
-                    orders.map((order) => (
-                      <tr key={String(order.id)}>
-                        <td>{order.orderStatus}</td>
-                        <td>0000{order.id}</td>
-                        <td>
-                          {order.items.map((item) => (
-                            <span key={item.title}>
-                              {item.quantity} x {item.title} ,{" "}
-                            </span>
-                          ))}
-                        </td>
-                        <td>{formatDate(order.created_at)}</td>
-                      </tr>
-                    ))}
-                </tbody>
-              )}
-            </table>
-          </Table>
-
-          <Card>
-            {orders && orders.map((order) => <PedidoCard data={order} />)}
-          </Card>
-        </Content>
-      </Container>
+        <Card>
+          {orders && orders.map((order) => <PedidoCard data={order} key={order.id} />)}
+        </Card>
+      </Content>
       <Footer />
-    </>
+    </Container>
   );
 }

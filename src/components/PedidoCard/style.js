@@ -13,6 +13,10 @@ export const Container = styled.div`
       display: flex;
       justify-content: space-between;
       gap: 5px;
+
+      @media (max-width: 425px) {
+        flex-direction: column;
+      }
     }
     .items {
         margin-bottom: 20px;

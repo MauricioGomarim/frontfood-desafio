@@ -27,9 +27,14 @@ export const Content = styled.div`
   justify-content: center;
   color: ${({ theme }) => theme.COLORS.WHITE};
 
+
+
   .col1 {
     width: 40%;
     margin-right: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     > img {
       max-width: 100%;
     }
@@ -95,6 +100,21 @@ export const Content = styled.div`
       > button {
         width: fit-content;
       }
+    }
+  }
+
+  @media (max-width:767px) {
+    flex-direction: column;
+
+    .col1 {
+      width: 100% !important;
+
+      img {
+        max-width: 250px !important;
+      }
+    }
+    .col2 {
+      width: 100% !important;
     }
   }
 `;

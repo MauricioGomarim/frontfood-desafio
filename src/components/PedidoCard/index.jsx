@@ -19,7 +19,7 @@ export function PedidoCard({ data, ...rest }) {
     }h${minutesFormatted}`;
   }
   return (
-    <Container>
+    <Container {...rest}>
       {user.isAdmin ? (
         <div className="Contet-card">
           <div className="text-hora">

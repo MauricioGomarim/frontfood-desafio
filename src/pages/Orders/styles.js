@@ -6,29 +6,22 @@ export const Container = styled.div`
       font-weight: 500;
     display: flex;
     flex-direction: column;
-    
+    height: 100vh;
     width: 100%;
     min-width: 320px;
     min-height: 100%;
-    
+
     overflow: auto;
     overflow: overlay;  
-
-    footer {
-        position: absolute;
-        bottom: 0;
-    }
 `;
 
 export const Content = styled.div`
     display: flex;
     flex-direction: column;
-    
     width: 100%;
     max-width: 121.2rem;
-    margin: auto;
     padding: 3.5rem 4rem;
-
+    margin: 0 auto;
     .zeroOrders {
         justify-content: center;
         align-items: center;
