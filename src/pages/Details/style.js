@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const Container = styled.section`
   width: 100%;
   font-family: "Poppins", sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 
   > main {
     width: 80%;

@@ -3,6 +3,7 @@ import { Button } from "../../components/Button";
 import { Tag } from "../../components/Tag";
 import { Header } from "../../components/Header";
 import { ButtonText } from "../../components/ButtonText";
+import { Footer } from "../../components/Footer"
 
 import { Container, Content, SectionTags } from "./style";
 import { MdKeyboardArrowLeft } from "react-icons/md";
@@ -22,7 +23,7 @@ export function Details() {
   const [data, setData] = useState("");
   const [quantity, setQuantity] = useState(1);
   const { addDishToCart } = useCart();
-  const user = useAuth();
+  const {user} = useAuth();
 
   const increase = () => {
     if (quantity > 19) {
@@ -110,6 +111,7 @@ export function Details() {
           </Content>
         </main>
       )}
+      <Footer />
     </Container>
   );
 }
