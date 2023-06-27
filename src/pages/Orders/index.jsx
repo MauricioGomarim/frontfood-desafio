@@ -51,7 +51,7 @@ export function Orders() {
     minutesFormatted =
       minutesFormatted.length == 1 ? `0${minutesFormatted}` : minutesFormatted;
 
-    return `${dateFormatted.getDate()}/${monthFormatted} às ${dateFormatted.getHours() - 3}h${minutesFormatted}`;
+    return `${dateFormatted.getDate()}/${monthFormatted} às ${dateFormatted.getHours()}h${minutesFormatted}`;
   }
 
   return (
