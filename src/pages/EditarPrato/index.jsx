@@ -31,9 +31,6 @@ export function EditarPrato() {
   const navigate = useNavigate()
 
   async function handleEditarPrato() {
-    if (!image) {
-      return alert("Erro: Você não inseriu uma imagem para o prato!");
-    }
 
     if (!title) {
       return alert("Erro: Você não informou o nome do prato!");

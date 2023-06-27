@@ -85,6 +85,14 @@ export function Details() {
 
               {user.isAdmin ? (
                 <div className="card-footer">
+                  <Link to={`/editarprato/${data.id}`}>
+                    <Button title="Editar prato" />
+                  </Link>
+
+                  <Button title="Excluir prato" onClick={handleDelete} />
+                </div>
+              ) : (
+                <div className="card-footer">
                   <div className="quantidade">
                     <ButtonText icon={MdRemove} onClick={decrease} />
                     <p>{quantity}</p>
@@ -96,14 +104,6 @@ export function Details() {
                   >
                     <a href="#">incluir ∙ R$ 25,00</a>
                   </div>
-                </div>
-              ) : (
-                <div className="card-footer">
-                  <Link to={`/editarprato/${data.id}`}>
-                    <Button title="Editar prato" />
-                  </Link>
-
-                  <Button title="Excluir prato" onClick={handleDelete} />
                 </div>
               )}
             </div>
