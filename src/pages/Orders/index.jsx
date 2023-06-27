@@ -51,9 +51,7 @@ export function Orders() {
     minutesFormatted =
       minutesFormatted.length == 1 ? `0${minutesFormatted}` : minutesFormatted;
 
-    return `${dateFormatted.getDate()}/${monthFormatted} às ${
-      dateFormatted.getHours()
-    }h${minutesFormatted}`;
+    return `${dateFormatted.getDate()}/${monthFormatted} às ${dateFormatted.getHours() - 3}h${minutesFormatted}`;
   }
 
   return (
@@ -136,7 +134,8 @@ export function Orders() {
         </Table>
 
         <Card>
-          {orders && orders.map((order) => <PedidoCard data={order} key={order.id} />)}
+          {orders &&
+            orders.map((order) => <PedidoCard data={order} key={order.id} />)}
         </Card>
       </Content>
       <Footer />
