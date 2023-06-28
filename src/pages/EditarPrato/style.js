@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const Container = styled.section`
   font-family: "Poppins", sans-serif;
   color: ${({ theme }) => theme.COLORS.WHITE};
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 
   #image-prato {
     display: none;
