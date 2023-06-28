@@ -66,6 +66,10 @@ export const Container = styled.div`
     font-size: 20px;
     color: ${({ theme }) => theme.COLORS.WHITE};
 
+    @media (max-width:767px) {
+        flex-direction: column;
+      }
+
     .quantidade {
       display: flex;
       gap: 10px;
@@ -83,6 +87,12 @@ export const Container = styled.div`
         }
       }
 
+      @media (max-width:767px) {
+        width: 100%;
+        justify-content: space-around;
+        margin-bottom: 20px;
+      }
+
     }
 
     .add {
@@ -93,6 +103,10 @@ export const Container = styled.div`
         background-color: ${({ theme }) => theme.COLORS.RED};
         border-radius: 10px;
         cursor: pointer;
+
+        @media (max-width:767px) {
+        width: 100%;
+      }
     }
   }
 `;
