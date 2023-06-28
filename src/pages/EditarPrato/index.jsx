@@ -27,14 +27,9 @@ export function EditarPrato() {
   const [image, setImage] = useState(null);
   const [newIngredient, setNewIngredient] = useState("");
 
-
   const navigate = useNavigate();
 
   async function handleEditarPrato() {
-
-
-
-
     if (ingredients.length < 1) {
       return alert("Erro: Adicione pelo menos um ingrediente!");
     }
@@ -48,7 +43,6 @@ export function EditarPrato() {
     if (!price) {
       return alert("Erro: Você não informou o preço do prato!");
     }
-
 
     const formData = new FormData();
     formData.append("image", image);
@@ -93,14 +87,14 @@ export function EditarPrato() {
       const response = await api.get(`/pratos/${params.id}`);
       setData(response.data);
 
-      const { title, description, category, price, ingredients } = response.data;
+      const { title, description, category, price, ingredients } =
+        response.data;
 
       setTitle(title);
       setDescription(description);
       setCategory(category);
       setPrice(price);
       setIngredients(ingredients.map((ingredient) => ingredient.name));
-
     }
     buscarDadosPrato();
   }, []);
@@ -171,12 +165,17 @@ export function EditarPrato() {
                 />
               </SectionLabel>
               <SectionLabel title="Preço" className="r2-col2">
-                <input type="text" placeholder="R$ 00,00" value={price} onChange={(e) => setPrice(e.target.value)} />
+                <input
+                  type="text"
+                  placeholder="R$ 00,00"
+                  value={price}
+                  onChange={(e) => setPrice(e.target.value)}
+                />
               </SectionLabel>
               <SectionLabel title="Descrição" className="r2-col3">
                 <textarea
                   placeholder="Descrição"
-                  value={data.description}
+                  value={description}
                   onChange={(e) => setDescription(e.target.value)}
                 ></textarea>
               </SectionLabel>
