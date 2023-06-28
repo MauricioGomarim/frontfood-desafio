@@ -1,6 +1,6 @@
 import { Container, Content, Form } from "./style";
 import { ButtonText } from "../../components/ButtonText";
-import { Footer } from "../../components/Footer"
+import { Footer } from "../../components/Footer";
 import { Button } from "../../components/Button";
 import { Link } from "react-router-dom";
 
@@ -26,15 +26,14 @@ export function EditarPrato() {
   const [ingredients, setIngredients] = useState([]);
   const [image, setImage] = useState(null);
   const [newIngredient, setNewIngredient] = useState("");
-  const user = useAuth();
 
-  const navigate = useNavigate()
+
+  const navigate = useNavigate();
 
   async function handleEditarPrato() {
 
-    if (!title) {
-      return alert("Erro: Você não informou o nome do prato!");
-    }
+
+
 
     if (ingredients.length < 1) {
       return alert("Erro: Adicione pelo menos um ingrediente!");
@@ -46,17 +45,10 @@ export function EditarPrato() {
       );
     }
 
-    if (!category) {
-      return alert("Erro: Você não selecionou a categoria do prato!");
-    }
-
     if (!price) {
       return alert("Erro: Você não informou o preço do prato!");
     }
 
-    if (!description) {
-      return alert("Erro: Você não informou uma descrição para o prato!");
-    }
 
     const formData = new FormData();
     formData.append("image", image);
@@ -68,17 +60,15 @@ export function EditarPrato() {
     ingredients.map((ingredient) => formData.append("ingredients", ingredient));
 
     await api
-      .put(`/pratos/${data.id}`, formData)
+      .put(`/pratos/${params.id}`, formData)
+      .then(alert("Prato atualizado com sucesso!"), navigate("/"))
       .catch((error) => {
         if (error.response) {
           alert(error.response.data.message);
         } else {
-          alert("Erro ao editar prato!");
+          alert("Erro ao atualizar o prato!");
         }
-      })
-      .then(alert("Prato editado com sucesso!"));
-
-      navigate("/")
+      });
   }
 
   function handleAddIngredient() {
@@ -103,15 +93,14 @@ export function EditarPrato() {
       const response = await api.get(`/pratos/${params.id}`);
       setData(response.data);
 
-      const { title, description, category, price, ingredients } =
-        response.data;
+      const { title, description, category, price, ingredients } = response.data;
 
       setTitle(title);
       setDescription(description);
       setCategory(category);
       setPrice(price);
       setIngredients(ingredients.map((ingredient) => ingredient.name));
-      console.log(ingredients);
+
     }
     buscarDadosPrato();
   }, []);
@@ -182,7 +171,7 @@ export function EditarPrato() {
                 />
               </SectionLabel>
               <SectionLabel title="Preço" className="r2-col2">
-                <input type="text" placeholder="R$ 00,00" value={price} />
+                <input type="text" placeholder="R$ 00,00" value={price} onChange={(e) => setPrice(e.target.value)} />
               </SectionLabel>
               <SectionLabel title="Descrição" className="r2-col3">
                 <textarea
