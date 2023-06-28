@@ -10,6 +10,16 @@ export const Container = styled.div`
   .swiper-button-prev:after,.swiper-button-next:after {
     color: white;
   }
+
+  .swiper-slide > div{
+    padding: 20px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .swiper-slide > div:hover {
+    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+  }
   > main {
     width: 80%;
     max-width: 100%;

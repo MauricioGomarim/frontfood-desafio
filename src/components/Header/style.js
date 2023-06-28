@@ -25,8 +25,25 @@ export const Container = styled.header`
     svg {
       font-size: 30px;
     }
+
+
   }
 
+  .newDish {
+    svg, a {
+      transition: all .3s ease-in-out;
+    }
+
+  }
+  .newDish svg:hover{
+    transform: scale(1.5);
+  } 
+  a{
+     transition: all .4s ease;
+  }
+   a:hover {
+    transform: scale(1.1);
+  }
   .hamburger {
     display: none;
   }

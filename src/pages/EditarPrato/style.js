@@ -19,7 +19,7 @@ export const Container = styled.section`
   }
   main {
     width: 80%;
-    margin: 0 auto;
+    margin: 0 auto 30px;
 
     > a {
       color: ${({ theme }) => theme.COLORS.WHITE};
