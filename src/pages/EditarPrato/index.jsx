@@ -177,6 +177,7 @@ export function EditarPrato() {
                 <textarea
                   placeholder="Descrição"
                   value={data.description}
+                  onChange={(e) => setDescription(e.target.value)}
                 ></textarea>
               </SectionLabel>
               <div className="button">
